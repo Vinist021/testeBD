@@ -9,16 +9,15 @@ import java.sql.SQLException;
 public class UsuarioDAO {
 
     public void cadastrarUsuario(Usuario usuario){
-        String sql = "INSERT INTO USUARIO(NOME, LOGIN, SENHA, EMAIL) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO mensagens(NOME, EMAIL, COMENTARIO) VALUES (?, ?, ?)";
 
         PreparedStatement ps = null;
 
         try {
             ps = Conexao.getConexao().prepareStatement(sql);
             ps.setString(1, usuario.getNome());
-            ps.setString(2, usuario.getLogin());
-            ps.setString(3, usuario.getSenha());
-            ps.setString(4, usuario.getEmail());
+            ps.setString(2, usuario.getEmail());
+            ps.setString(3, usuario.getComentario());
 
             ps.execute();
             ps.close();

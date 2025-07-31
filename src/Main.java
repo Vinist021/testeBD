@@ -7,9 +7,8 @@ public class Main {
         Usuario u = new Usuario();
 
         u.setNome("teste");
-        u.setLogin("da silva");
-        u.setSenha("1234");
         u.setEmail("teste@gmail.com");
+        u.setComentario("teste de comentario");
 
         new UsuarioDAO().cadastrarUsuario(u);
 
